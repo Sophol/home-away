@@ -198,7 +198,7 @@ export const createProfileAction = async (prevState: any,formData: FormData) => 
 
   export const fetchFavorites = async () => {
     const user = await getUserAuth();
-    try{
+    //try{
       const favorites = await db.favorite.findMany({
         where: {
           profileId: user.id
@@ -217,11 +217,11 @@ export const createProfileAction = async (prevState: any,formData: FormData) => 
         }
       });
       return favorites.map((favorite) => favorite.property);
-    }catch(error){
-        return renderError(error);
-    }
+    // }catch(error){
+    //     return renderError(error);
+    // }
   }
-  export const fetchPropertyDetails = async(id: string)  => {
+  export const fetchPropertyDetails = async(id: string) => {
     return db.property.findUnique({
       where: {
         id,

@@ -3,7 +3,7 @@ import PropertyList from './PropertyList';
 import EmptyList from './EmptyList';
 import type { PropertyCardProps } from '@/utils/types';
 
-async function PropertyContainer({category, search}: {category: string, search: string}){
+async function PropertyContainer({category, search}: {category?: string, search?: string}){
     const properties: PropertyCardProps[] = await fetchProperties({
         category,
         search,
